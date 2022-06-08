@@ -8,7 +8,7 @@ div#sales {
 	border-radius: 6px;
 	margin: 10px 0px 0px 0px;
 	padding: 0px;
-	border: 1px solid #d9d9d9;
+	border: 5px solid #ff3908;
 }
 div.saleItem {
 	font-family: Verdana, Helvetica, sans-serif;
@@ -17,6 +17,11 @@ div.saleItem {
 }
 div.saleItem:nth-child(2n) {
 	background-color: #fafafa;
+	margin: 10px;
+}
+div.saleItem:nth-child(2n+1) {
+	background-color: #ecfc17;
+	margin: 10px;
 }
 div.saleItem:first-child {
 	-webkit-border-top-left-radius: 6px;
