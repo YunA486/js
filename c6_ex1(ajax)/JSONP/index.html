@@ -2,11 +2,17 @@
 
 <head>
     <title>3317조윤아 마이티 검볼 (JSON)</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="imgs/logo.png" />
     <link rel="icon" type="image/png" href="imgs/logo.png" sizes="192x192" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- jquery 코드 추가1 -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <!--추가  1 js와 css연결-->
     <script src="mightygumball.js"></script>
@@ -14,11 +20,15 @@
 </head>
 
 <body>
+    <!-- jquery 코드 추가2 -->
+    <div data-role="header"
+        style="background:antiquewhite; color:cornflowerblue; text-align: center; text-valign:middle; height: 25px; font-size: 15pt; padding: 20px;">
+        Real-time Gumball Sale</div>
 
-    <h1>Real_time Gumball Sale</h1>
+    <!-- <h1>Real_time Gumball Sale</h1> -->
 
     <!--추가 2 id="sales"-->
-    <div id="sales"></div>
+    <div id="sales" style="border-radius: 20px;"></div>
 </body>
 
 </html>
