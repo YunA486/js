@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 	<!-- 로고 만들기와 모바일웹앱으로 보이기 -->
@@ -11,12 +10,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<!-- bootstrap 적용하기 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-	<title>서울시 공영주차장 안내</title>
+	<title>3317조윤아_서울시 공영주차장 안내</title>
 
 	<style>
 		html,
@@ -25,39 +24,48 @@
 			margin: 0px;
 			width: 100%;
 			height: 100%;
+			overflow: hidden;
 		}
 	</style>
 	<!-- 카카오 키 연결하기 -->
-	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d424ea5c13649b9e5c663742b0b285c4&libraries=services"></script>
+	<script type="text/javascript"
+		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d424ea5c13649b9e5c663742b0b285c4&libraries=services"></script>
 	<script src="parking.js"></script>
 </head>
 
 <body>
-
-	<div id="cover_close" onclick="document.getElementById('cover_close').style.display = 'none';"
-		style="cursor:pointer;">
-		<!-- style.display = 'none': click 하면 사라짐 -->
-		<img src="bg_img.png" style="width:100%; height:100%; position:absolute; z-index:6;">
-		<img src="fg_txt.png" style="width:70%; height:100%;left:15%; position:absolute; z-index:7;">
+	<div class="container-fluid" style="margin-left:0px; padding:0px; margin:0px;">
+		<div id="cover_close" onclick="document.getElementById('cover_close').style.display = 'none';"
+			style="cursor:pointer;">
+			<!-- style.display = 'none': click 하면 사라짐 -->
+			<img src="bg_img.png"
+				style="width:100%; height:100%; position:absolute; z-index:6; padding:0px; margin:0px;">
+			<img src="signage.png"
+				style="position:absolute; z-index:7; margin-top: 10%; margin-left: 35%;">
+		</div>
+		<!--   1.지도  ->  3.셀렉트 유료 무료 버튼  4. 평일/주말, 평일 버튼 -> 5.버튼 -> 6.검정배경  ->  7.공영주차장그림 -->
+		
 	</div>
-	<!--   1.지도  ->  3.셀렉트 유료 무료 버튼  4. 평일/주말, 평일 버튼 -> 5.버튼 -> 6.검정배경  ->  7.공영주차장그림 -->
-	<div>
-		<select id='pay'
-			style="z-index:3; margin-left:10px; margin-top:5px; font-family:dotum; font-size:0.7em; vertical-align:middle;">
-			<option value='notfree' seleceted> 유료</option>
-			<option value='free'>무료</option>
-		</select>
 
-		<select id='run' style="z-index:4;font-family:dotum; font-size:0.7em; vertical-align:middle; margin-top:5px;">
-			<option value='week' seleceted> 평일/주말 이용가능</option>
-			<option value='weekday'>평일 이용가능</option>
-		</select>
-
-		<input type='button' value='검색' id='button'
-			style="font-family:dotum;z-index:5; font-size:0.7em; vertical-align:middle; margin-top:5px; background-color:#fff; border:0; cursor:pointer;" />
+	<div style="position: absolute; z-index: 5; top: 10px; left: 770px;">
+		<h2 style="padding-left: 30px; padding-right: 30px; height: 50px; line-height: 1.5; border-radius: 30px; background-color: darkseagreen; color: aliceblue;">서울시 공영 주차장 안내</h2>
+		<center>
+			<select class="btn btn-warning" id="pay"
+				style="height:30px; width:75px; z-index:3; font-family:dotum;font-size:15px; vertical-align:middle; ">
+				<option value="notfree" seleceted> 유료</option>
+				<option value="free">무료</option>
+			</select>
+			<select class="btn btn-success" id="run"
+				style="height:30px; width:180px; z-index:4; font-family:dotum; font-size:15px; vertical-align:middle;">
+				<option value="week" seleceted> 평일/주말 이용가능</option> <!-- 항시운영 -->
+				<option value="weekday">평일 이용가능</option>
+			</select>
+			<button class="btn btn-info" type="button" id="button"
+				style="height:30px; width:60px; z-index:5; font-family:dotum;font-size:15px; vertical-align:middle; cursor:pointer;">검색
+			</button>
+		</center>
 	</div>
-	<div id="map" style="width:100%; height:100%; z-index:1;"></div>
 
+	<div id="map" style="width:100%; height:100%; z-index:1; position: relative;"></div>
 </body>
-
 </html>

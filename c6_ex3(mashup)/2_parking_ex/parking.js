@@ -22,13 +22,13 @@ window.onload = function () {
 }
 
 function handleRefresh() {
-    for (var i = 1; i < 16000; i = i + 1000)//16번 호출 i=1 j=1000, i=1001 j=2000, i=2001 j=3000,..., i=15001 j=16000 까지
-    {
-        var j = i + 999;
-        var url = "http://openAPI.seoul.go.kr:8088/4e6e5056756a6f79313030777a7a706c/json/GetParkInfo/" + i + "/" + j;
-        $.getJSON(url, updatePark);
-    }
-    addBound();// 지도에 원을 표시
+	for (var i=1; i<16000; i=i+1000 )//16번 호출 i=1 j=1000, i=1001 j=2000, i=2001 j=3000,..., i=15001 j=16000 까지
+	{
+	var j = i + 999;
+	var url = "http://openAPI.seoul.go.kr:8088/644d42625173756e35354e6d636d63/json/GetParkInfo/"+i+"/"+j;
+    $.getJSON(url, updatePark);
+	}
+	addBound();// 지도에 원을 표시
 }
 
 function updatePark(parks) {//16번 호출
@@ -42,8 +42,8 @@ function updatePark(parks) {//16번 호출
 
     for (var i = 0; i < arr.length; i++) {
         var park = arr[i];
-        var imageSrc = "marker1.png",
-            imageSize = new daum.maps.Size(27, 40), //마커의 크기(daummap에서 size 검색, 크기정보를 가지고 있는 사이즈 객체 생성)
+        var imageSrc = "gps.png",
+            imageSize = new daum.maps.Size(30, 30), //마커의 크기(daummap에서 size 검색, 크기정보를 가지고 있는 사이즈 객체 생성)
             imageOption = { offset: new daum.maps.Point(14, 28) };//point 검색, 화면 좌표 정보를 담고 있는 포인터 객체 생성
         //point생성, 좌표를 0,0으로 해도 됨
         var loc = {//open API의 값들 위도와 경도
@@ -79,10 +79,10 @@ function addBound() {
         center: map.getCenter(),  // 원의 중심좌표 입니다 
         radius: 1000, // 미터 단위의 원의 반지름입니다 
         strokeWeight: 5, // 선의 두께입니다 
-        strokeColor: '#3333ff', // 선의 색깔입니다
+        strokeColor: 'cornflowerblue', // 선의 색깔입니다
         strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'dashed', // 선의 스타일 입니다
-        fillColor: '#b5b5ff', // 채우기 색깔입니다
+        fillColor: 'lightcoral', // 채우기 색깔입니다
         fillOpacity: 0.3,  // 채우기 불투명도 입니다
         zIndex: 1
     });
