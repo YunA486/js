@@ -42,7 +42,7 @@ function updatePark(parks) {//16번 호출
 
     for (var i = 0; i < arr.length; i++) {
         var park = arr[i];
-        var imageSrc = "gps.png",
+        var imageSrc = "img/gps.png",
             imageSize = new daum.maps.Size(30, 30), //마커의 크기(daummap에서 size 검색, 크기정보를 가지고 있는 사이즈 객체 생성)
             imageOption = { offset: new daum.maps.Point(14, 28) };//point 검색, 화면 좌표 정보를 담고 있는 포인터 객체 생성
         //point생성, 좌표를 0,0으로 해도 됨
